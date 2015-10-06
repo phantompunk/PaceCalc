@@ -42,5 +42,5 @@
         android:id="@+id/resultPaceCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/paceCalc"/>
+        android:text="@string/resultText"/>
     </LinearLayout>
