@@ -1,47 +1,50 @@
 package edu.phambdvcu.pacecalc;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class PaceActivity extends AppCompatActivity {
+/**
+ * Created by phambd on 10/6/15.
+ */
+public class TimeActivity extends AppCompatActivity{
+
     private GuiHelper guiHelper;
     private TextView display;
-    private EditText timeEdit;
     private EditText distanceEdit;
+    private EditText paceEdit;
     private Button button;
-    private String time;
     private String distance;
-    private double pace;
+    private String pace;
+    private double time;
 
-    private OnClickListener listener = new OnClickListener() {
+    private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            time = timeEdit.getText().toString();
             distance = distanceEdit.getText().toString();
-            guiHelper = new GuiHelper("pace", time, distance);
-            pace = guiHelper.helper();
-            display.setText(Double.toString(pace) + " mph");
+            pace = paceEdit.getText().toString();
+            guiHelper = new GuiHelper("time", distance, pace);
+            time = guiHelper.helper();
+            display.setText(Double.toString(time) + " hours");
         }
     };
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pace);
-        display = (TextView)findViewById(R.id.resultPaceBox);
-        timeEdit = (EditText)findViewById(R.id.timeBox);
+        setContentView(R.layout.activity_time);
+        display = (TextView)findViewById(R.id.timeBox);
+        paceEdit = (EditText)findViewById(R.id.resultPaceBox);
         distanceEdit = (EditText)findViewById(R.id.distanceBox);
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(listener);
 
-    }
 
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

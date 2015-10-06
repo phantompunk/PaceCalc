@@ -1,6 +1,16 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".PaceActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/calcPace"
+        android:title="@string/menuitem_calculate_pace"
+        android:orderInCategory="1" android:alphabeticShortcut="e"
+        android:titleCondensed="@string/menuitem_calculate_pace"
+        android:icon="@android:drawable/ic_menu_edit"></item>
+    <item android:id="@+id/calcTime"
+        android:title="@string/menuitem_calculate_time"
+        android:orderInCategory="2" android:alphabeticShortcut="d"
+        android:titleCondensed="@string/menuitem_calculate_time"></item>
+    <item android:id="@+id/calcDistance"
+        android:title="@string/menuitem_calculate_distance"
+        android:orderInCategory="3"
+        android:titleCondensed="@string/menuitem_calculate_distance"></item>
 </menu>

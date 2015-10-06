@@ -9,6 +9,9 @@
     <string name="distanceHint">00.00</string>
     <string name="resultPace">Pace</string>
     <string name="resultPaceHint">Pace</string>
+    <string name="menuitem_calculate_pace">Calculate Pace</string>
+    <string name="menuitem_calculate_time">Calculate Time</string>
+    <string name="menuitem_calculate_distance">Calculate Distance</string>
     <!--<string name=""></string>-->
     <!--<string name=""></string>-->
     <!--<string name=""></string>-->
