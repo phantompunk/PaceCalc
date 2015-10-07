@@ -12,6 +12,9 @@ public class GuiHelper {
     private double distance;
     private double pace;
 
+    /**
+     * default constructor
+     */
     public GuiHelper() {
         type = "";
         x = "";
@@ -22,6 +25,12 @@ public class GuiHelper {
 
     }
 
+    /**
+     * 3 arg constructor sets user input in x and y, and sets type.
+     * @param type type of variable needed
+     * @param x first user input
+     * @param y second user input
+     */
     public GuiHelper(String type, String x, String y) {
         this.type = type;
         this.x = x;
@@ -32,6 +41,11 @@ public class GuiHelper {
     }
 
 
+    /**
+     * This method finds the type of variable needed and
+     * uses Calculator object to make calculations
+     * @return the desired variable as a double
+     */
     public double helper(){
 
         switch(type){
@@ -52,22 +66,38 @@ public class GuiHelper {
                 break;
         }
 
-        if (type.equals(pace))
+        if (type.compareTo("pace")==0)
             return pace;
-        else if (type.equals(time))
+        else if (type.compareTo("time")==0)
             return time;
         else
             return distance;
     }
 
+    /**
+     * This method parses time in string to double, and
+     * converts time into hours
+     * @param time as a String
+     * @return time as a double in terms of hours
+     */
     private double parseTime(String time){
-
-        return 0;
+            String[] hourMin = time.split(":");
+            double hour = Double.parseDouble(hourMin[0]);
+            double mins = Double.parseDouble(hourMin[1]);
+            double secs = Double.parseDouble(hourMin[2]);
+            double convertmins = mins/60;
+            double convertsecs = secs/3600;
+            return hour + convertmins + convertsecs;
     }
 
+    /**
+     * This method accepts a string and parses it into a double
+     * @param number number to be parsed
+     * @return number as a double
+     */
     private double parseNumber(String number){
 
-        return 0;
+        return Double.parseDouble(number);
     }
 
 

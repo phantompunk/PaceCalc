@@ -7,18 +7,6 @@
     android:paddingLeft="20dip">
 
     <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/timeText"
-        />
-    <EditText
-        android:id="@+id/timeBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/timeHint"
-        android:inputType="time"/>
-    <TextView
         android:id="@+id/distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,12 +22,24 @@
         android:id="@+id/resultPace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/resultPace" />
-    <TextView
+        android:text="@string/resultPaceHint"
+        />
+    <EditText
         android:id="@+id/resultPaceBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/resultPaceHint" />
+        android:hint="@string/distanceHint"
+        android:inputType="number"/>
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/timeText" />
+    <TextView
+        android:id="@+id/timeBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/timeText" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
