@@ -1,5 +1,6 @@
 package edu.phambdvcu.pacecalc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -58,9 +59,19 @@ public class TimeActivity extends AppCompatActivity{
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-
-
-        return super.onOptionsItemSelected(item);
+        switch (id) {
+            case R.id.calcDistance:
+                Intent intent = new Intent(this, DistanceActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.calcPace:
+                Intent intent2 = new Intent(this, PaceActivity.class);
+                startActivity(intent2);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
+
+
 }

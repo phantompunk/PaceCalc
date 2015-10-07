@@ -1,6 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingRight="20dip"
+    android:paddingLeft="20dip">
 
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/timeText"
+        />
+    <EditText
+        android:id="@+id/timeBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/timeHint"
+        android:inputType="time"/>
+    <TextView
+        android:id="@+id/resultPace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resultPace"
+        />
+    <EditText
+        android:id="@+id/resultPaceBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/resultPaceHint"
+        android:inputType="numberDecimal"/>
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/distanceText" />
+    <TextView
+        android:id="@+id/distanceBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/distanceHint" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate!"
+        android:layout_gravity="center_horizontal"
+        android:onClick="calculate"/>
 </LinearLayout>

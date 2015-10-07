@@ -1,5 +1,6 @@
 package edu.phambdvcu.pacecalc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,26 +21,25 @@ public class PaceActivity extends AppCompatActivity {
     private String distance;
     private double pace;
 
-    private OnClickListener listener = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            time = timeEdit.getText().toString();
-            distance = distanceEdit.getText().toString();
-            guiHelper = new GuiHelper("pace", time, distance);
-            pace = guiHelper.helper();
-            display.setText(Double.toString(pace) + " mph");
-        }
-    };
+//    private OnClickListener listener = new OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            time = timeEdit.getText().toString();
+//            distance = distanceEdit.getText().toString();
+//            guiHelper = new GuiHelper("pace", time, distance);
+//            pace = guiHelper.helper();
+//            display.setText(Double.toString(pace) + " mph");
+//        }
+//    };
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pace);
-        display = (TextView)findViewById(R.id.resultPaceBox);
-        timeEdit = (EditText)findViewById(R.id.timeBox);
-        distanceEdit = (EditText)findViewById(R.id.distanceBox);
-        button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(listener);
-
+//        display = (TextView)findViewById(R.id.resultPaceBox);
+//        timeEdit = (EditText)findViewById(R.id.timeBox);
+//        distanceEdit = (EditText)findViewById(R.id.distanceBox);
+//        button = (Button)findViewById(R.id.button);
+//        button.setOnClickListener(listener);
     }
 
     @Override
@@ -55,9 +55,32 @@ public class PaceActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id) {
+            case R.id.calcDistance:
+                Intent intent = new Intent(this, DistanceActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.calcTime:
+                Intent intent2 = new Intent(this, TimeActivity.class);
+                startActivity(intent2);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
 
 
+        }
+//        return super.onOptionsItemSelected(item);
+    }
 
-        return super.onOptionsItemSelected(item);
+    public void calculate(View view) {
+        display = (TextView)findViewById(R.id.resultPaceBox);
+        timeEdit = (EditText)findViewById(R.id.timeBox);
+        distanceEdit = (EditText)findViewById(R.id.distanceBox);
+        button = (Button)findViewById(R.id.button);
+        time = timeEdit.getText().toString();
+        distance = distanceEdit.getText().toString();
+        guiHelper = new GuiHelper("pace", time, distance);
+        pace = guiHelper.helper();
+        display.setText(Double.toString(pace) + " mph");
     }
 }

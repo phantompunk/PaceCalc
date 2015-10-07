@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TimeActivity"
+            android:label="TimeActivity" />
+        <activity android:name=".DistanceActivity"
+            android:label="DistanceActivity" />
     </application>
 
 </manifest>
